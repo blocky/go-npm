@@ -58,8 +58,8 @@ function verifyAndPlaceBinary(binName, binPath, callback) {
     getInstallationPath(function(err, installationPath) {
         if (err) return callback("Error getting binary installation path from `npm bin`");
 
-        // Create a symbolic link instead of moving or copying the file
-        fs.symlinkSync(path.join(binPath, binName), path.join(installationPath, binName));
+        // Copy the binary file
+        fs.copyFileSync(path.join(binPath, binName), path.join(installationPath, binName));
 
         callback(null);
     });

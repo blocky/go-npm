@@ -1,6 +1,6 @@
 {
   "name": "@blockylabs/go-npm",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Distribute and install Go binaries via NPM",
   "main": "index.js",
   "bin": {

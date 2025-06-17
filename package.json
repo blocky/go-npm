@@ -1,16 +1,16 @@
 {
-  "name": "go-npm",
-  "version": "0.1.9",
+  "name": "@blockylabs/go-npm",
+  "version": "0.0.1",
   "description": "Distribute and install Go binaries via NPM",
   "main": "index.js",
   "bin": {
-    "go-npm": "./bin/index.js"
+    "go-npm": "bin/index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepublish": "node_modules/babel-cli/bin/babel.js src --out-dir bin --presets es2015"
   },
-  "author": "Sanath Kumar Ramesh <dayanandasaraswati@gmail.com>",
+  "author": "Blocky <info@blocky.rocks>",
   "license": "Apache-2.0",
   "dependencies": {
     "mkdirp": "^0.5.1",
@@ -19,9 +19,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sanathkr/go-npm.git"
+    "url": "git+https://github.com/blocky/go-npm.git"
   },
-  "homepage": "https://github.com/sanathkr/go-npm",
+  "homepage": "https://github.com/blocky/go-npm",
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",

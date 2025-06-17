@@ -87,9 +87,30 @@ Following variables are available to customize the URL:
 
 If you use `goreleaser` to publish your modules, it will automatically set the right architecture & platform in your URL.
 
+If you intend to use the downloaded binary as dependency in another NPM package,
+you can also specify the `bin` property in `package.json` file. 
+
+```
+  "bin": {
+    "command-name": "./bin/command-name"
+  }
+```
+
+Notice that `command-name` is the same as the `name` property in `goBinary`
+and `./bin/command-name` is the path where the binary will be downloaded to.
+
+> Note that the binary downloaded to `path` will be __copied__ by `go-npm` to 
+> NPM's `bin` directory as a part of the `postinstall` script. The intent is to
+> leave the download copy in `goBinary.path` so that it can be referenced in
+> the optional `bin` property in `package.json` (since the NPM `bin` directory
+> is system dependent and not guaranteed to be the same across all platforms).
+> If you're not using the `bin` property in your project, you may want to add
+> a step to remove the downloaded binary from `goBinary.path` after the
+> `postinstall` script completes.
+
 **Publish to NPM**
 
-All that's left now is publish to NPM. As I promised before, just one command
+All that's left now is to publish to NPM. As I promised before, just one command
 
 `$ npm publish`
 
